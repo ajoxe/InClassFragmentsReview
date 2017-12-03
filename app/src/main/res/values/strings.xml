@@ -2,5 +2,12 @@
     <string name="app_name">InClassFragmentsReview</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment">Hello!</string>
+
+    <string name="hello_response">Whats up?</string>
+    <string name="how_are_you_response">It\'s complicated</string>
+    <string name="meaning_of_life">Hell if I know</string>
+    <string name="what_day_response">What am I, a calendar?</string>
+    <string name="name_response">I haven\'t picked one yet</string>
+    <string name="default_response">No comment, bro&#8230;</string>
 </resources>

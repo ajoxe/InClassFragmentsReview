@@ -19,6 +19,8 @@ public class FirstFragment extends Fragment {
     View rootView;
     EditText editText;
     Button button;
+    CheckingInputs response;
+
 
     public FirstFragment() {
         // Required empty public constructor
@@ -32,14 +34,19 @@ public class FirstFragment extends Fragment {
         rootView = inflater.inflate(R.layout.fragment_first, container, false);
         editText = (EditText) rootView.findViewById(R.id.first_fragment_editText);
         button = (Button) rootView.findViewById(R.id.first_fragment_button);
+        String userEntry = editText.getText().toString();
+        response = new CheckingInputs(userEntry);
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String userEntry = editText.getText().toString();
+                response = new CheckingInputs(userEntry);
                 SecondFragment secondFragment = new SecondFragment();
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 Bundle bundle = new Bundle();
-                bundle.putString("getEditText", editText.getText().toString());
+                bundle.putString("getEditText", response.responses());
                 secondFragment.setArguments(bundle);
                 fragmentTransaction.setCustomAnimations(R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit);
                 fragmentTransaction.replace(R.id.main_fragment_container_framelayout, secondFragment);
