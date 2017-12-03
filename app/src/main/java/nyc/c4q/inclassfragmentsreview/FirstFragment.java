@@ -41,6 +41,7 @@ public class FirstFragment extends Fragment {
                 Bundle bundle = new Bundle();
                 bundle.putString("getEditText", editText.getText().toString());
                 secondFragment.setArguments(bundle);
+                fragmentTransaction.setCustomAnimations(R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit);
                 fragmentTransaction.replace(R.id.main_fragment_container_framelayout, secondFragment);
                 fragmentTransaction.addToBackStack("next");
                 fragmentTransaction.commit();
